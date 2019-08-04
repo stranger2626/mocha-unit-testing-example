@@ -1,0 +1,43 @@
+{
+  "name": "mocha-unit-testing-example",
+  "version": "1.0.0",
+  "description": "a simple unit test demo using mocha",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
+    "mocha": "^6.2.0",
+    "mochawesome": "^4.0.1",
+    "nyc": "^14.1.1"
+  },
+  "scripts": {
+    "test": "mocha --config ./test/config/mocha.config.js",
+    "coverage": "nyc npm run test"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "app/**/*.js"
+    ],
+    "excludes": [
+      "**/*.spec.js"
+    ],
+    "reporter": [
+      "html",
+      "text"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stranger2626/mocha-unit-testing-example.git"
+  },
+  "author": "Matsvei Murashka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stranger2626/mocha-unit-testing-example/issues"
+  },
+  "homepage": "https://github.com/stranger2626/mocha-unit-testing-example#readme"
+}

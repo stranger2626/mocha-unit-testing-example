@@ -1,2 +1,14 @@
-# mocha-unit-testing-example
-a simple set of demo unit tests
+# Installation
+```
+npm install
+```
+
+# Run unit tests
+```
+npm run test
+```
+
+#Generate coverage report
+```
+npm run coverage
+```
