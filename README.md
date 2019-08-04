@@ -8,7 +8,7 @@ npm install
 npm run test
 ```
 
-#Generate coverage report
+# Generate coverage report
 ```
 npm run coverage
 ```
