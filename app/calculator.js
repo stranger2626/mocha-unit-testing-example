@@ -20,18 +20,19 @@ class Calculator {
      * 
      * @memberOf Calculator
      */
-     add() {
-        var sumOfNumbers = 0;
-            for (let i = 0; i < arguments.length; i++) {
-                if (typeof arguments[i] === 'number') {
-                    sumOfNumbers += arguments[i];
-                } else {
-                    throw new Error('Not a Number');
-                }
+
+     add(...args) {
+        let sumOfNumbers = 0;
+        args.forEach((el => {
+            if (typeof el === 'number') {
+                 sumOfNumbers += el;
+            } else {
+                throw new Error('Not a Number');
             }
-            return sumOfNumbers;
-        }
-    
+        }));
+        return sumOfNumbers;
+    };
+
     /**
      * 
      * 
@@ -41,15 +42,15 @@ class Calculator {
      * @memberOf Calculator
      */
 
-     multiply() {
-        var sumOfNumbers = 1;
-          for (let i = 0; i < arguments.length; i++) {
-            if (typeof arguments[i] === 'number') {
-                sumOfNumbers *= arguments[i];
+     multiply(...args) {
+        let sumOfNumbers = 1;
+        args.forEach((el => {
+            if (typeof el === 'number') {
+                 sumOfNumbers *= el;
             } else {
                 throw new Error('Not a Number');
             }
-        } 
+        }));
         return sumOfNumbers;
     };
 }
