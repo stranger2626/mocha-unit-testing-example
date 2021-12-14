@@ -10,33 +10,37 @@ describe ('calculator', function() {
        calculator = null; 
     });
 
-    it('should return 5 when add 2 to 3', function() {
-        expect(calculator.add(2,3)).to.be.equal(5);
+    it('should correctly add more that two positive numbers', function() {
+        expect(calculator.add(2,3,10)).to.be.equal(15);
     });
 
-    it('should return 3.5 when add 0 to 3.5', function() {
+    it('should correctly add float numbers', function() {
         expect(calculator.add(0,3.5)).to.be.equal(3.5);
     });
 
-    it('should return -15 when add -5 to -10', function() {
+    it('should correctly add negative numbers', function() {
         expect(calculator.add(-5,-10)).to.be.equal(-15);
     });
 
-    it('should return Not a number when add 5 to s', function() {
+    it('should not add number to letter', function() {
         assert.throws(function() {
             calculator.add(5,'a'), Error, /Not a Number/;});
     });
 
-    it('should return 15 when multiple 3 and 5', function() {
-        expect(calculator.multiple(3,5)).to.be.equal(15);
+    it('should correctly multiply positive numbers', function() {
+        expect(calculator.multiply(3,5)).to.be.equal(15);
     });
 
-    it('should return 6 when multiple 1.5 and 4', function() {
-        expect(calculator.multiple(1.5,4)).to.be.equal(6);
+    it('should correctly multiply float numbers', function() {
+        expect(calculator.multiply(1.5,4)).to.be.equal(6);
     });
 
-    it('should return Not a number when add A to b', function() {
+    it('should not multiply number and letter', function() {
         assert.throws(function() {
-            calculator.add('A','b'), Error, /Not a Number/;});
+            calculator.multiply(5,'A'), Error, /Not a Number/;});
+    });
+
+    it('should correctly multiply to zero', function() {
+        expect(calculator.multiply(0,5)).to.be.equal(0);
     });
 });

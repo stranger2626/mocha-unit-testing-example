@@ -15,36 +15,44 @@ class Calculator {
     /**
      * 
      * 
-     * @param {Number} numberFirst first number for adding
-     * @param {Number} numberSecond second number for adding
+
      * @returns sum of numbers
      * 
      * @memberOf Calculator
      */
-    add(numberFirst, numberSecond) {
-        if (typeof numberFirst === 'number' && typeof numberSecond === 'number') {
-            return numberFirst + numberSecond;
-        } else {
-            throw new Error;
-        }
+
+     add(...args) {
+        let sumOfNumbers = 0;
+        args.forEach((el => {
+            if (typeof el === 'number') {
+                 sumOfNumbers += el;
+            } else {
+                throw new Error('Not a Number');
+            }
+        }));
+        return sumOfNumbers;
     };
 
     /**
      * 
      * 
-     * @param {Number} numberFirst first number for multiplying
-     * @param {Number} numberSecond second number for multiplying
-     * @returns multiplied
+     
+     * @returns multiplied amount of numbers
      * 
      * @memberOf Calculator
      */
-    multiple(numberFirst, numberSecond) {
-        if (typeof numberFirst === 'number' && typeof numberSecond === 'number') {
-            return numberFirst * numberSecond;
-        } else {
-            throw new Error('Not a number');
-        }
-    }
+
+     multiply(...args) {
+        let sumOfNumbers = 1;
+        args.forEach((el => {
+            if (typeof el === 'number') {
+                 sumOfNumbers *= el;
+            } else {
+                throw new Error('Not a Number');
+            }
+        }));
+        return sumOfNumbers;
+    };
 }
 
 module.exports = Calculator;
